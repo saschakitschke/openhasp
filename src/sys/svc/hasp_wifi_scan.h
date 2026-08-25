@@ -27,10 +27,25 @@ bool wifiScanInProgress();
 void wifiStartAsyncScan();
 
 /**
+ * @brief Process scan results (check for completion)
+ */
+void wifiProcessScanResults();
+
+/**
  * @brief Get scan results as JSON
  * @param doc JSON document to populate
  */
 void wifiGetScanResultsJson(JsonDocument& doc);
+
+/**
+ * @brief HTTP handler for GET /api/hasp-studio/wifi/scan
+ */
+void webHandleHaspStudioWifiScan(AsyncWebServerRequest* request);
+
+/**
+ * @brief HTTP handler for GET /api/hasp-studio/status
+ */
+void webHandleHaspStudioStatus(AsyncWebServerRequest* request);
 
 #ifdef __cplusplus
 }
